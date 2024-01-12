@@ -7,6 +7,7 @@ import createError from 'http-errors'
 import logger from 'morgan'
 
 // import routers
+import './config/database.js'
 import { router as indexRouter } from './routes/index.js'
 import { router as candiesRouter } from './routes/candies.js'
 
