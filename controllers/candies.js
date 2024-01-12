@@ -1,8 +1,14 @@
-import { candies } from '../data/candy-data.js'
+import { Candy } from '../models/candy.js'
 
 function index(req, res) {
-  res.render('candies/index', {
-    candies: candies
+  Candy.find({}).then(candies => {
+    res.render('candies/index', {
+      candies: candies
+    })
+  })
+  .catch(err => {
+    console.log(`💥`, err)
+    res.redirect('/')
   })
 }
 
