@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import { candies } from '../data/candy-data.js'
 
 const router = Router()
 
