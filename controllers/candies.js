@@ -12,6 +12,11 @@ function index(req, res) {
   })
 }
 
+function newCandy(req, res) {
+  res.render('candies/new')
+}
+
 export {
   index,
+  newCandy as new,
 }

@@ -5,6 +5,8 @@ const router = Router()
 
 // GET localhost:3000/candies
 router.get('/', candiesCtrl.index)
-// GET localhost:3000/candies
+// GET localhost:3000/candies/new
+router.get('/new', candiesCtrl.new)
+// GET localhost:3000/candies/
 
 export { router }
