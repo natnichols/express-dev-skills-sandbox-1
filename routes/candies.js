@@ -1,14 +1,10 @@
 import { Router } from 'express'
-import { candies } from '../data/candy-data.js'
+import * as candiesCtrl from '../controllers/candies.js'
 
 const router = Router()
 
 // GET localhost:3000/candies
-router.get('/', function(req, res) {
-  res.render('candies/index', {
-    candies: candies
-  })
-})
+router.get('/', candiesCtrl.index)
 // GET localhost:3000/candies
 
 export { router }
