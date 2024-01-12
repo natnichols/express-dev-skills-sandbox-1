@@ -3,7 +3,8 @@ import { Candy } from '../models/candy.js'
 function index(req, res) {
   Candy.find({}).then(candies => {
     res.render('candies/index', {
-      candies: candies
+      candies: candies,
+      time: req.time
     })
   })
   .catch(err => {
