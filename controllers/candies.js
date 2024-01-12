@@ -28,8 +28,21 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Candy.findById(req.params.candyId).then(candy => {
+    res.render('candies/show', {
+      candy: candy
+    })
+  })
+  .catch(err => {
+    console.log(`💥`, err)
+    res.redirect('/candies')
+  })
+}
+
 export {
   index,
   newCandy as new,
   create,
+  show,
 }

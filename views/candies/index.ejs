@@ -10,7 +10,7 @@
   <ul>
     <% candies.forEach(candy => { %>
       <li>
-        <%= candy.text %> 
+        <a href="/candies/<%= candy._id %>"><%= candy.text %></a> 
         - 
         <%= candy.inPantry ? 'in pantry' : 'not in pantry' %>
       </li>
