@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
   <title>Express Candies</title>
 </head>
 <body>
@@ -10,7 +11,10 @@
   <ul>
     <% candies.forEach(candy => { %>
       <li>
-        <a href="/candies/<%= candy._id %>"><%= candy.text %></a> 
+        <form action="/candies/<%= candy._id %>?_method=DELETE" method="POST">
+          <button type="submit">🗑️</button>
+        </form>
+        <a href="/candies/<%= candy._id %>"><%= candy.text %></a>
         - 
         <%= candy.inPantry ? 'in pantry' : 'not in pantry' %>
       </li>

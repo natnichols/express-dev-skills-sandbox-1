@@ -41,9 +41,20 @@ function show(req, res) {
   })
 }
 
+function deleteCandy(req, res) {
+  Candy.findByIdAndDelete(req.params.candyId).then(candy => {
+    res.redirect('/candies')
+  })
+  .catch(err => {
+    console.log(`💥`, err)
+    res.redirect('/candies')
+  })
+}
+
 export {
   index,
   newCandy as new,
   create,
   show,
+  deleteCandy as delete,
 }

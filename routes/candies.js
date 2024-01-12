@@ -11,5 +11,7 @@ router.get('/new', candiesCtrl.new)
 router.get('/:candyId', candiesCtrl.show)
 // POST localhost:3000/candies
 router.post('/', candiesCtrl.create)
+// DELETE localhost:3000/candies/:candyId
+router.delete('/:candyId', candiesCtrl.delete)
 
 export { router }
