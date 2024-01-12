@@ -7,6 +7,7 @@ const router = Router()
 router.get('/', candiesCtrl.index)
 // GET localhost:3000/candies/new
 router.get('/new', candiesCtrl.new)
-// GET localhost:3000/candies/
+// POST localhost:3000/candies
+router.post('/', candiesCtrl.create)
 
 export { router }
