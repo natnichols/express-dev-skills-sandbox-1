@@ -2,9 +2,12 @@ import { Router } from 'express'
 
 const router = Router()
 
-// GET localhost:3000/users
+// GET localhost:3000/candies
 router.get('/', function(req, res) {
-  res.send('respond with a resource')
+  res.render('candies/index', {
+    candies: candies
+  })
 })
+// GET localhost:3000/candies
 
 export { router }

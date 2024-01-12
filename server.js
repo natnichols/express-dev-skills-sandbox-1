@@ -7,7 +7,7 @@ import logger from 'morgan'
 
 // import routers
 import { router as indexRouter } from './routes/index.js'
-import { router as usersRouter } from './routes/users.js'
+import { router as candiesRouter } from './routes/candies.js'
 
 // create the express app
 const app = express()
@@ -15,7 +15,7 @@ const app = express()
 // view engine setup
 app.set('view engine', 'ejs')
 
-// basic middleware
+// basic middleware pipeline
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -27,7 +27,7 @@ app.use(
 
 // mount imported routes
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
+app.use('/candies', candiesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

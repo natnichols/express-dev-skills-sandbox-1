@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Express Candies</title>
+</head>
+<body>
+  <h1>Candies</h1>
+  <ul>
+    <% candies.forEach(candy => { %>
+      <li>
+        <%= candy.text %> 
+        - 
+        <%= candy.inPantry ? 'in pantry' : 'not in pantry' %>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
