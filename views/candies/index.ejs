@@ -11,6 +11,9 @@
   <ul>
     <% candies.forEach(candy => { %>
       <li>
+        <a href="/candies/<%= candy._id %>/edit">
+          <button type="submit">✏️</button>
+        </a>
         <form action="/candies/<%= candy._id %>?_method=DELETE" class="delete-form" method="POST">
           <button type="submit">🗑️</button>
         </form>

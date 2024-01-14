@@ -51,10 +51,35 @@ function deleteCandy(req, res) {
   })
 }
 
+function edit(req, res) {
+  // req.body.inPantry = !!req.body.inPantry
+  Candy.findById(req.params.candyId).then(candy => {
+    res.render('candies/edit', {
+      candy: candy
+    })
+  })
+  .catch(err => {
+    console.log(`💥`, err)
+    res.redirect('/candies')
+  })
+}
+
+function update(req, res) {
+  Candy.findByIdAndUpdate(req.params.candyId, req.body, {new: true}).then(candy => {
+    res.redirect(`/candies/${candy._id}`)
+  })
+  .catch(err => {
+    console.log(`💥`, err)
+    res.redirect('/candies')
+  })
+}
+
 export {
   index,
   newCandy as new,
   create,
   show,
   deleteCandy as delete,
+  edit,
+  update,
 }
