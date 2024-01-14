@@ -10,6 +10,12 @@
   <h2>Candy #<%= candy._id %></h2>
   <h3><%= candy.text %></h3>
   <p>In Pantry: <%= candy.inPantry ? 'Yes' : 'No' %></p>
+  <a href="/candies/<%= candy._id %>/edit">
+    <button type="submit">✏️ Edit Candy</button>
+  </a>
+  <form action="/candies/<%= candy._id %>?_method=DELETE" class="delete-form" method="POST">
+    <button type="submit">🗑️ Delete Candy</button>
+  </form><br>
   <a href="/candies">Go back to Candies List 🍫</a>
 </body>
 </html>

@@ -65,6 +65,7 @@ function edit(req, res) {
 }
 
 function update(req, res) {
+  req.body.inPantry = !!req.body.inPantry
   Candy.findByIdAndUpdate(req.params.candyId, req.body, {new: true}).then(candy => {
     res.redirect(`/candies/${candy._id}`)
   })

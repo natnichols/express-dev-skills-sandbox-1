@@ -6,12 +6,12 @@
   <title>Edit Candy Details</title>
 </head>
 <body>
-  <h1>Edit Candy</h1>
-  <form action="/candies/<%= candy._id %>?_method=PUT" method="POST">
+  <h1>Edit <%= candy.text %></h1>
+  <form action="/candies/<%= candy._id %>?_method=PUT" method="POST" autocomplete="off">
     <input value="<%= candy.text %>" type="text" name="text">
-    <button type="submit">💾 Save Candy🍬</button>
-  </form>
-  <p>In Pantry: <%= candy.inPantry ? 'Yes' : 'No' %></p>
+    <input type="checkbox" <%= candy.inPantry ? 'checked' : '' %> name="inPantry">
+    <button type="submit">💾 Save Candy 🍬</button>
+  </form><br>
   <a href="/candies">Go back to Candies List 🍫</a>
 </body>
 </html>
